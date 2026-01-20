@@ -9,7 +9,7 @@ El objetivo principal de este proyecto es tener una **alta visibilidad web** y c
 
 ## 🔗 Ver Demo en Vivo
 Puedes ver la página funcionando aquí:  
-👉 **[HAZ CLIC AQUÍ PARA VER LA PÁGINA](https://tusuario.github.io/proyecto-gasolinera)**
+👉 **[HAZ CLIC AQUÍ PARA VER LA PÁGINA](https://danielpazortega1.github.io/proyecto-gasolinera)**
 *(Reemplaza este link con el que te dio GitHub Pages)*
 
 ## 🛠️ Tecnologías Utilizadas
