@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surtidora de Gasolineras | Soluciones Integrales</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <h1 class="logo">LOGO EMPRESA</h1>
+            
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li>
+                    <a href="https://wa.me/50255107695?text=Hola,%20vi%20su%20página%20web%20y%20me%20interesa%20más%20información." class="btn-whatsapp-nav" target="_blank">
+                        Cotizar por WhatsApp
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h2>Líderes en Suministros para Estaciones de Servicio</h2>
+                <p>Equipamiento, mantenimiento y tecnología para gasolineras modernas.</p>
+                <a href="https://wa.me/50255107695?text=Hola,%20me%20interesa%20cotizar%20sus%20servicios" class="btn btn-whatsapp" target="_blank">
+                    Cotizar Ahora
+                </a>
+            </div>
+            <div class="hero-img">
+                <img src="img/prueba.jpg" alt="Imagen Principal de Gasolinera">
+            </div>
+        </div>
+    </header>
+
+    <section id="servicios" class="section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="card">
+                    <img src="img/prueba.jpg" alt="Mantenimiento">
+                    <h3>Mantenimiento de Bombas</h3>
+                    <p>Servicio técnico especializado para dispensadores y tanques.</p>
+                </div>
+                <div class="card">
+                    <img src="img/prueba.jpg" alt="Instalación">
+                    <h3>Instalación de Tanques</h3>
+                    <p>Cumplimiento con normativas de seguridad y medio ambiente.</p>
+                </div>
+                <div class="card">
+                    <img src="img/prueba.jpg" alt="Suministros">
+                    <h3>Venta de Repuestos</h3>
+                    <p>Catálogo completo de pistolas, mangueras y filtros.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="section bg-light">
+        <div class="container split-content">
+            <div class="text">
+                <h2 class="section-title">Sobre Nosotros</h2>
+                <p>Somos expertos en la industria de hidrocarburos. Nos dedicamos a optimizar la operación de tu estación de servicio con tecnología de punta y soporte 24/7.</p>
+            </div>
+            <div class="image">
+                <img src="img/prueba.jpg" alt="Equipo de trabajo">
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="container">
+            <h3>Contáctanos</h3>
+            <p>Teléfono: +502 5555-5555</p>
+            <p>Email: contacto@ejemplo.com</p>
+            <p>&copy; 2026 Surtidora de Gasolineras. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        // Abrir / Cerrar menú al tocar el botón
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('is-active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Cerrar el menú automáticamente al tocar un enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('is-active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
