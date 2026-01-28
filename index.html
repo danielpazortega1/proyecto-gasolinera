@@ -11,8 +11,9 @@
 
     <nav class="navbar">
         <div class="container nav-content">
-            <h1 class="logo">LOGO EMPRESA</h1>
-            
+            <a href="#inicio" class="logo">
+            <img src="img/logo.jpg" alt="Logo Empresa" style="height: 60px; vertical-align: middle;">
+            </a>            
             <button class="menu-toggle" aria-label="Abrir menú">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -21,10 +22,10 @@
 
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
                 <li><a href="#nosotros">Nosotros</a></li>
                 <li>
-                    <a href="https://wa.me/50255107695?text=Hola,%20vi%20su%20página%20web%20y%20me%20interesa%20más%20información." class="btn-whatsapp-nav" target="_blank">
+                    <a href="https://wa.me/50239949768?text=Hola,%20vi%20su%20página%20web" class="btn-whatsapp-nav" target="_blank">
                         Cotizar por WhatsApp
                     </a>
                 </li>
@@ -37,34 +38,68 @@
             <div class="hero-text">
                 <h2>Líderes en Suministros para Estaciones de Servicio</h2>
                 <p>Equipamiento, mantenimiento y tecnología para gasolineras modernas.</p>
-                <a href="https://wa.me/50255107695?text=Hola,%20me%20interesa%20cotizar%20sus%20servicios" class="btn btn-whatsapp" target="_blank">
-                    Cotizar Ahora
-                </a>
+                
+                <div class="hero-buttons">
+                    <a href="https://wa.me/50239949768?text=Hola,%20me%20interesa%20cotizar" class="btn btn-whatsapp" target="_blank">
+                        WhatsApp
+                    </a>
+                    <button id="btn-open-modal" class="btn btn-email">
+                        Cotizar por Correo
+                    </button>
+                </div>
             </div>
             <div class="hero-img">
-                <img src="img/prueba.jpg" alt="Imagen Principal de Gasolinera">
+                <img src="img/logotp.png" alt="Imagen Principal">
             </div>
         </div>
     </header>
 
-    <section id="servicios" class="section">
+    <section id="catalogo" class="section">
         <div class="container">
-            <h2 class="section-title">Nuestros Servicios</h2>
-            <div class="services-grid">
-                <div class="card">
-                    <img src="img/prueba.jpg" alt="Mantenimiento">
-                    <h3>Mantenimiento de Bombas</h3>
-                    <p>Servicio técnico especializado para dispensadores y tanques.</p>
+            <h2 class="section-title">Catálogo de Productos</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Seleccione una categoría para ver todos los productos.</p>
+            
+            <div class="category-grid">
+                <div class="category-card" data-category="modal-bombas">
+                    <div class="icon-container"></div>
+                    <h3>Bombas y Medidores</h3>
+                    <p>Bombas FR, GPI y medidores de flujo.</p>
+                    <button class="btn-ver">Ver Productos</button>
                 </div>
-                <div class="card">
-                    <img src="img/prueba.jpg" alt="Instalación">
-                    <h3>Instalación de Tanques</h3>
-                    <p>Cumplimiento con normativas de seguridad y medio ambiente.</p>
+
+                <div class="category-card" data-category="modal-dispensadores">
+                    <div class="icon-container"></div>
+                    <h3>Dispensadores y Electrónica</h3>
+                    <p>Equipos Wayne, teclados y pantallas.</p>
+                    <button class="btn-ver">Ver Productos</button>
                 </div>
-                <div class="card">
-                    <img src="img/prueba.jpg" alt="Suministros">
-                    <h3>Venta de Repuestos</h3>
-                    <p>Catálogo completo de pistolas, mangueras y filtros.</p>
+
+                <div class="category-card" data-category="modal-accesorios">
+                    <div class="icon-container"></div>
+                    <h3>Pistolas y Mangueras</h3>
+                    <p>Boquereles, swivels y accesorios.</p>
+                    <button class="btn-ver">Ver Productos</button>
+                </div>
+
+                <div class="category-card" data-category="modal-filtracion">
+                    <div class="icon-container"></div>
+                    <h3>Filtración y Tanques</h3>
+                    <p>Filtros, sumideros y bombas sumergibles.</p>
+                    <button class="btn-ver">Ver Productos</button>
+                </div>
+
+                <div class="category-card" data-category="modal-tuberia">
+                    <div class="icon-container"></div>
+                    <h3>Tubería NUPI y Válvulas</h3>
+                    <p>Sistema completo de tubería y conexiones.</p>
+                    <button class="btn-ver">Ver Productos</button>
+                </div>
+
+                <div class="category-card" data-category="modal-insumos">
+                    <div class="icon-container"></div>
+                    <h3>Insumos y Seguridad</h3>
+                    <p>Iluminación LED, medición y limpieza.</p>
+                    <button class="btn-ver">Ver Productos</button>
                 </div>
             </div>
         </div>
@@ -74,41 +109,163 @@
         <div class="container split-content">
             <div class="text">
                 <h2 class="section-title">Sobre Nosotros</h2>
-                <p>Somos expertos en la industria de hidrocarburos. Nos dedicamos a optimizar la operación de tu estación de servicio con tecnología de punta y soporte 24/7.</p>
+                <p>Somos expertos en la industria de hidrocarburos. Nos dedicamos a optimizar la operación de tu estación de servicio con productos de alta calidad y soporte técnico especializado.</p>
             </div>
-            <div class="image">
-                <img src="img/prueba.jpg" alt="Equipo de trabajo">
-            </div>
+          
         </div>
     </section>
 
     <footer id="contacto">
         <div class="container">
             <h3>Contáctanos</h3>
-            <p>Teléfono: +502 5555-5555</p>
-            <p>Email: contacto@ejemplo.com</p>
-            <p>&copy; 2026 Surtidora de Gasolineras. Todos los derechos reservados.</p>
+            <p>Teléfono: +502 3994-9768</p>
+            <p>Email: servicioalcliente@multiproyectosgt.com</p>
+            <p>&copy; 2026 BARÚ, S.A.</p>
         </div>
     </footer>
 
-    <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
+    <div id="emailModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Solicitud de Cotización</h2>
+            <form action="https://formsubmit.co/servicioalcliente@multiproyectosgt.com" method="POST">
+                <input type="hidden" name="_subject" value="Nueva Cotización Web">
+                <input type="hidden" name="_captcha" value="false">
+                
+                <div class="form-group">
+                    <label>Nombre *</label>
+                    <input type="text" name="Nombre" required>
+                </div>
+                <div class="form-group">
+                    <label>Apellido *</label>
+                    <input type="text" name="Apellido" required>
+                </div>
+                <div class="form-group">
+                    <label>Empresa</label>
+                    <input type="text" name="Empresa">
+                </div>
+                <div class="form-group">
+                    <label>Su Correo *</label>
+                    <input type="email" name="email" required>
+                </div>
+                <button type="submit" class="btn btn-submit">Enviar</button>
+            </form>
+        </div>
+    </div>
 
-        // Abrir / Cerrar menú al tocar el botón
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('is-active');
-            navLinks.classList.toggle('active');
-        });
+    <div id="modal-bombas" class="catalog-modal">
+        <div class="catalog-content">
+            <span class="close-catalog">&times;</span>
+            <h2>Bombas y Medidores</h2>
+            <div class="products-grid">
+                <div class="product-item"><img src="img/fr150.jpg"><h4>FR150</h4><p>Manual</p></div>
+                <div class="product-item"><img src="img/fr112c.jpg"><h4>FR112C</h4><p>Eléctrica</p></div>
+                <div class="product-item"><img src="img/fr610h.jpg"><h4>FR610H</h4><p>Alto Flujo</p></div>
+                <div class="product-item"><img src="img/fr711va.jpg"><h4>FR711VA</h4><p>Standard</p></div>
+                <div class="product-item"><img src="img/fr1211h.jpg"><h4>FR1211H</h4><p>12V DC</p></div>
+                <div class="product-item"><img src="img/fr4211h.jpg"><h4>FR4211H</h4><p>Alto rendimiento</p></div>
+                <div class="product-item"><img src="img/nx25-120nbaa.jpg"><h4>NX25</h4><p>Transferencia</p></div>
+                
+                <div class="product-item"><img src="img/pump-g20.jpg"><h4>PUMP G20</h4><p>GPI</p></div>
+                <div class="product-item"><img src="img/pump-g20-012po.jpg"><h4>G20-012PO</h4><p>Industrial</p></div>
+                <div class="product-item"><img src="img/pump-hp-100-ul.jpg"><h4>HP-100-UL</h4><p>Alta capacidad</p></div>
 
-        // Cerrar el menú automáticamente al tocar un enlace
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('is-active');
-                navLinks.classList.remove('active');
-            });
-        });
-    </script>
+                <div class="product-item"><img src="img/medidor-807c.jpg"><h4>807C</h4><p>Mecánico</p></div>
+                <div class="product-item"><img src="img/medidor-900cd.jpg"><h4>900CD</h4><p>Digital</p></div>
+                <div class="product-item"><img src="img/medidor-901c.jpg"><h4>901C</h4><p>Mecánico</p></div>
+                <div class="product-item"><img src="img/medidor-m30.jpg"><h4>M30</h4><p>GPI Azul</p></div>
+                <div class="product-item"><img src="img/medidor-qm40.jpg"><h4>QM40</h4><p>GPI PRO</p></div>
+            </div>
+        </div>
+    </div>
 
+    <div id="modal-dispensadores" class="catalog-modal">
+        <div class="catalog-content">
+            <span class="close-catalog">&times;</span>
+            <h2>Dispensadores y Electrónica</h2>
+            <div class="products-grid">
+                <div class="product-item"><img src="img/wayne-helix.jpg"><h4>WAYNE HELIX</h4><p>Dispensador</p></div>
+                <div class="product-item"><img src="img/wayne-select.jpg"><h4>WAYNE SELECT</h4><p>Dispensador</p></div>
+                <div class="product-item"><img src="img/keypad-encor-500.jpg"><h4>KEYPAD ENCOR</h4><p>Teclado</p></div>
+                <div class="product-item"><img src="img/preset-gilbarco.jpg"><h4>PRESET</h4><p>Gilbarco</p></div>
+                <div class="product-item"><img src="img/display-lcd.jpg"><h4>DISPLAY LCD</h4><p>Pantalla</p></div>
+                <div class="product-item"><img src="img/pulsador-gilbarco.jpg"><h4>PULSADOR</h4><p>Gilbarco</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-accesorios" class="catalog-modal">
+        <div class="catalog-content">
+            <span class="close-catalog">&times;</span>
+            <h2>Pistolas y Mangueras</h2>
+            <div class="products-grid">
+                <div class="product-item"><img src="img/pistolas.jpg"><h4>PISTOLAS</h4><p>3/4" y 1"</p></div>
+                <div class="product-item"><img src="img/forro-amarillo.jpg"><h4>FORRO</h4><p>Protector</p></div>
+                <div class="product-item"><img src="img/breakaway.jpg"><h4>BREAKAWAY</h4><p>Seguridad</p></div>
+                <div class="product-item"><img src="img/swivel.jpg"><h4>SWIVEL</h4><p>Giratoria</p></div>
+                <div class="product-item"><img src="img/manguera-fluid-house.jpg"><h4>MANGUERA</h4><p>Fluid House</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-filtracion" class="catalog-modal">
+        <div class="catalog-content">
+            <span class="close-catalog">&times;</span>
+            <h2>Filtración y Tanques</h2>
+            <div class="products-grid">
+                <div class="product-item"><img src="img/bomba-sumergible.jpg"><h4>RED JACKET</h4><p>Bomba</p></div>
+                <div class="product-item"><img src="img/motor-sumergible.jpg"><h4>MOTOR</h4><p>Repuesto</p></div>
+                
+                <div class="product-item"><img src="img/filtro-trampa.jpg"><h4>TRAMPA AGUA</h4><p>Visor claro</p></div>
+                <div class="product-item"><img src="img/filtro-elemento.jpg"><h4>ELEMENTO</h4><p>Repuesto</p></div>
+                <div class="product-item"><img src="img/filtro-fillrite.jpg"><h4>FILL-RITE</h4><p>Partículas</p></div>
+                <div class="product-item"><img src="img/filtro-petroclear.jpg"><h4>PETROCLEAR</h4><p>Industrial</p></div>
+                <div class="product-item"><img src="img/kit-filter-usk.jpg"><h4>KIT FILTRO</h4><p>USK</p></div>
+                <div class="product-item"><img src="img/o-ring-gilbarco.jpg"><h4>O-RINGS</h4><p>Junta Gilbarco</p></div>
+
+                <div class="product-item"><img src="img/sumidero-tanque.jpg"><h4>SUMIDERO</h4><p>Tanque</p></div>
+                <div class="product-item"><img src="img/sumidero-dispensador.jpg"><h4>SUMIDERO</h4><p>Dispensador</p></div>
+                <div class="product-item"><img src="img/contenedor-derrames.jpg"><h4>CONTENEDOR</h4><p>Derrames 5G</p></div>
+                <div class="product-item"><img src="img/bota-entrada.jpg"><h4>BOTA</h4><p>Entrada</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-tuberia" class="catalog-modal">
+        <div class="catalog-content">
+            <span class="close-catalog">&times;</span>
+            <h2>Tubería NUPI y Válvulas</h2>
+            <div class="products-grid">
+                <div class="product-item"><img src="img/tuberia-nupi.jpg"><h4>TUBERIA</h4><p>NUPI</p></div>
+                <div class="product-item"><img src="img/adaptador-macho.jpg"><h4>ADAPTADOR</h4><p>Macho</p></div>
+                <div class="product-item"><img src="img/camisa.jpg"><h4>CAMISA</h4><p>Unión</p></div>
+                <div class="product-item"><img src="img/codo.jpg"><h4>CODO</h4><p>90 Grados</p></div>
+                <div class="product-item"><img src="img/tee.jpg"><h4>TEE</h4><p>Conexión T</p></div>
+                <div class="product-item"><img src="img/riser.jpg"><h4>RISER</h4><p>Tubo</p></div>
+                <div class="product-item"><img src="img/valvula-emergencia.jpg"><h4>VALVULA</h4><p>Emergencia</p></div>
+                <div class="product-item"><img src="img/valvula-venteo.jpg"><h4>VENTEO</h4><p>Válvula</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-insumos" class="catalog-modal">
+        <div class="catalog-content">
+            <span class="close-catalog">&times;</span>
+            <h2>Insumos y Seguridad</h2>
+            <div class="products-grid">
+                <div class="product-item"><img src="img/pasta-combustible.jpg"><h4>PASTA</h4><p>Combustible</p></div>
+                <div class="product-item"><img src="img/pasta-agua.jpg"><h4>PASTA</h4><p>Agua</p></div>
+                <div class="product-item"><img src="img/vara-medicion.jpg"><h4>VARA</h4><p>Medición</p></div>
+                <div class="product-item"><img src="img/basurero.jpg"><h4>BASURERO</h4><p>Plumillero</p></div>
+                
+                <div class="product-item"><img src="img/lampara-canopy.jpg"><h4>CANOPY</h4><p>Jarvis</p></div>
+                <div class="product-item"><img src="img/lampara-flexbeam.jpg"><h4>FLEXBEAM</h4><p>Drop Lens</p></div>
+                <div class="product-item"><img src="img/lampara-hexagonal.jpg"><h4>HEXAGONAL</h4><p>LED</p></div>
+                <div class="product-item"><img src="img/lampara-perimetral.jpg"><h4>PERIMETRAL</h4><p>LED</p></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
