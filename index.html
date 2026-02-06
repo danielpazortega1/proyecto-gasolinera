@@ -6,13 +6,14 @@
     <title>BARÚ | Surtidora de Gasolineras</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container nav-content">
             <a href="#inicio" class="logo">
-                <img src="img/logo.jpg" alt="Logo Empresa" style="height: 60px; vertical-align: middle;">
+                <img src="img/logotp.png" alt="Logo Empresa" style="height: 60px; vertical-align: middle;">
             </a>            
             
             <button class="menu-toggle" aria-label="Abrir menú">
@@ -53,47 +54,633 @@
     </header>
 
     <section id="catalogo" class="section">
+    <div class="container main-layout">
+        
+        <aside class="main-sidebar" id="sidebar-filters">
+            <div class="sidebar-header-mobile">
+                <h3>Categorías</h3>
+                <span class="close-sidebar" onclick="toggleSidebar()">&times;</span>
+            </div>
+
+            <ul class="sidebar-menu">
+                <li onclick="filterCatalog('all')" class="active" id="btn-all">
+                    🔳 Ver Todo
+                </li>
+
+                <li onclick="filterCatalog('bombas')" id="btn-bombas">
+                    ⛽ Bombas y Medidores
+                    <ul class="brand-submenu" id="submenu-bombas">
+                        <li onclick="filterBrand('fill-rite', event)">👉 Fill-Rite</li>
+                        <li onclick="filterBrand('gpi', event)">👉 GPI</li>
+                        <li onclick="filterBrand('red-jacket', event)">👉 Red Jacket</li>
+                    </ul>
+                </li>
+
+                <li onclick="filterCatalog('dispensadores')" id="btn-dispensadores">
+                    📟 Dispensadores
+                    <ul class="brand-submenu" id="submenu-dispensadores">
+                        <li onclick="filterBrand('wayne', event)">👉 Wayne</li>
+                        <li onclick="filterBrand('gilbarco', event)">👉 Gilbarco</li>
+                    </ul>
+                </li>
+
+                <li onclick="filterCatalog('accesorios')" id="btn-accesorios">
+                    🔫 Pistolas y Accesorios
+                    <ul class="brand-submenu" id="submenu-accesorios">
+                        <li onclick="filterBrand('opw', event)">👉 OPW / Genérico</li>
+                        <li onclick="filterBrand('fluid-house', event)">👉 Fluid House</li>
+                    </ul>
+                </li>
+
+                <li onclick="filterCatalog('filtracion')" id="btn-filtracion">
+                    💧 Filtración y Tanques
+                    <ul class="brand-submenu" id="submenu-filtracion">
+                        <li onclick="filterBrand('petroclear', event)">👉 PetroClear</li>
+                        <li onclick="filterBrand('filtros', event)">👉 Filtros</li>
+                    </ul>
+                </li>
+
+                <li onclick="filterCatalog('tuberia')" id="btn-tuberia">
+                    🔧 Tubería y Válvulas
+                    <ul class="brand-submenu" id="submenu-tuberia">
+                        <li onclick="filterBrand('nupi', event)">👉 NUPI Smartflex</li>
+                        <li onclick="filterBrand('emco', event)">👉 Emco / Válvulas</li>
+                    </ul>
+                </li>
+
+                <li onclick="filterCatalog('insumos')" id="btn-insumos">
+                    💡 Insumos y Seguridad
+                    <ul class="brand-submenu" id="submenu-insumos">
+                        <li onclick="filterBrand('jarvis', event)">👉 Jarvis (Lámparas)</li>
+                        <li onclick="filterBrand('kolor-kut', event)">👉 Kolor Kut</li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+
+        <div class="content-right">
+            <div class="catalog-header">
+                <h2 class="section-title" id="catalog-title">Catálogo Completo</h2>
+                <button class="mobile-filter-btn" onclick="toggleSidebar()">🔍 mostrar catalogo</button>
+            </div>
+
+            <div class="products-grid" id="product-container">
+                
+                <div class="product-card" data-category="bombas" data-brand="fill-rite">
+                    <img src="img/medidor-900cd.jpg" loading="lazy" alt="900CD">
+                    <span class="brand-badge">Fill-Rite</span>
+                    <h4>Medidor 900CD</h4>
+                    <p>Mecánico 4 Dígitos (Galones)</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Medidor 900CD')" class="btn-icon whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Medidor 900CD')" class="btn-icon email" title="Correo">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="filtracion" data-brand="fill-rite">
+                    <img src="img/filtro-fillrite.jpg" loading="lazy" alt="Filtro FR">
+                    <span class="brand-badge">Fill-Rite</span>
+                    <h4>Filtro 30 Micrones</h4>
+                    <p>Alto Flujo 40 GPM</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Filtro Fill-Rite 30 Micrones')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Filtro Fill-Rite 30 Micrones')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="filtracion" data-brand="petroclear">
+                    <img src="img/filtro-petroclear.jpg" loading="lazy" alt="PetroClear">
+                    <span class="brand-badge">PetroClear</span>
+                    <h4>Filtro 40510P</h4>
+                    <p>Partículas y Agua</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Filtro PetroClear 40510P')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Filtro PetroClear 40510P')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="filtracion" data-brand="gilbarco">
+                    <img src="img/o-ring-gilbarco.jpg" loading="lazy" alt="O-Ring">
+                    <span class="brand-badge">Gilbarco</span>
+                    <h4>Kit O-Rings</h4>
+                    <p>Empaques y Sellos</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Kit O-Rings Gilbarco')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Kit O-Rings Gilbarco')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="tuberia" data-brand="emco">
+                    <img src="img/contenedor-derrames.jpg" loading="lazy" alt="Contenedor">
+                    <span class="brand-badge">Emco</span>
+                    <h4>Contenedor Derrames</h4>
+                    <p>5 Galones (Spill Bucket)</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Contenedor de Derrames 5G')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Contenedor de Derrames 5G')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bombas" data-brand="fill-rite">
+                    <img src="img/fr150.jpg" loading="lazy" alt="FR150">
+                    <span class="brand-badge">Fill-Rite</span>
+                    <h4>FR150 Piston</h4>
+                    <p>Bomba Manual</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Bomba Manual FR150')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Bomba Manual FR150')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="bombas" data-brand="fill-rite">
+                    <img src="img/fr112c.jpg" loading="lazy" alt="FR112C">
+                    <span class="brand-badge">Fill-Rite</span>
+                    <h4>FR112C</h4>
+                    <p>Eléctrica 110V</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Bomba FR112C')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Bomba FR112C')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="bombas" data-brand="fill-rite">
+                    <img src="img/fr610h.jpg" loading="lazy" alt="FR610H">
+                    <span class="brand-badge">Fill-Rite</span>
+                    <h4>FR610H</h4>
+                    <p>Bomba 115V</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Bomba FR610H')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Bomba FR610H')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="bombas" data-brand="fill-rite">
+                    <img src="img/nx25-120nbaa.jpg" loading="lazy" alt="NX25">
+                    <span class="brand-badge">Fill-Rite</span>
+                    <h4>NX25 Alto Flujo</h4>
+                    <p>Transferencia Rápida</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Bomba NX25-120NBAA')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Bomba NX25-120NBAA')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="bombas" data-brand="gpi">
+                    <img src="img/pump-g20.jpg" loading="lazy" alt="G20">
+                    <span class="brand-badge">GPI</span>
+                    <h4>G20-012PO</h4>
+                    <p>Bomba 12 Voltios</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Bomba GPI G20')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Bomba GPI G20')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="bombas" data-brand="gpi">
+                    <img src="img/medidor-m30.jpg" loading="lazy" alt="M30">
+                    <span class="brand-badge">GPI</span>
+                    <h4>Medidor M30</h4>
+                    <p>Mecánico</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Medidor GPI M30')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Medidor GPI M30')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="bombas" data-brand="red-jacket">
+                    <img src="img/bomba-sumergible.jpg" loading="lazy" alt="Red Jacket">
+                    <span class="brand-badge">Red Jacket</span>
+                    <h4>Bomba Sumergible</h4>
+                    <p>Motor de Turbina</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Bomba Sumergible Red Jacket')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Bomba Sumergible Red Jacket')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="dispensadores" data-brand="wayne">
+                    <img src="img/wayne-helix.jpg" loading="lazy" alt="Helix">
+                    <span class="brand-badge">Wayne</span>
+                    <h4>Helix 1000/2000</h4>
+                    <p>Dispensador Nuevo</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Dispensador Wayne Helix')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Dispensador Wayne Helix')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="dispensadores" data-brand="wayne">
+                    <img src="img/wayne-select.jpg" loading="lazy" alt="Select">
+                    <span class="brand-badge">Wayne</span>
+                    <h4>Select Series</h4>
+                    <p>Electrónico Robusto</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Dispensador Wayne Select')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Dispensador Wayne Select')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="dispensadores" data-brand="gilbarco">
+                    <img src="img/keypad-encor-500.jpg" loading="lazy" alt="Keypad">
+                    <span class="brand-badge">Gilbarco</span>
+                    <h4>Keypad Encore 500</h4>
+                    <p>Repuesto Teclado</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Keypad Encore 500')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Keypad Encore 500')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="dispensadores" data-brand="gilbarco">
+                    <img src="img/display-lcd.jpg" loading="lazy" alt="Display">
+                    <span class="brand-badge">Gilbarco</span>
+                    <h4>Display LCD</h4>
+                    <p>Pantalla Repuesto</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Display LCD Gilbarco')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Display LCD Gilbarco')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accesorios" data-brand="opw">
+                    <img src="img/pistolas.jpg" loading="lazy" alt="Pistolas">
+                    <span class="brand-badge">Genérico</span>
+                    <h4>Pistola 3/4" y 1"</h4>
+                    <p>Colores Variados</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Pistolas de Despacho')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Pistolas de Despacho')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="accesorios" data-brand="fluid-house">
+                    <img src="img/manguera-fluid-house.jpg" loading="lazy" alt="Manguera">
+                    <span class="brand-badge">Fluid House</span>
+                    <h4>Manguera 3/4"</h4>
+                    <p>Alta Resistencia</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Manguera Fluid House')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Manguera Fluid House')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="accesorios" data-brand="opw">
+                    <img src="img/breakaway.jpg" loading="lazy" alt="Breakaway">
+                    <span class="brand-badge">Accesorio</span>
+                    <h4>Breakaway</h4>
+                    <p>Válvula de Seguridad</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Breakaway')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Breakaway')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="tuberia" data-brand="nupi">
+                    <img src="img/tuberia-nupi.jpg" loading="lazy" alt="Tuberia">
+                    <span class="brand-badge">NUPI</span>
+                    <h4>Tubería Smartflex</h4>
+                    <p>1", 1 1/2", 2"</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Tuberia NUPI')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Tuberia NUPI')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="tuberia" data-brand="nupi">
+                    <img src="img/codo.jpg" loading="lazy" alt="Codo">
+                    <span class="brand-badge">NUPI</span>
+                    <h4>Codo 90°</h4>
+                    <p>Electrofusión</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Codo NUPI')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Codo NUPI')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="tuberia" data-brand="nupi">
+                    <img src="img/tee.jpg" loading="lazy" alt="Tee">
+                    <span class="brand-badge">NUPI</span>
+                    <h4>Tee</h4>
+                    <p>Conexión T</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Tee NUPI')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Tee NUPI')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="insumos" data-brand="jarvis">
+                    <img src="img/lampara-canopy.jpg" loading="lazy" alt="Canopy">
+                    <span class="brand-badge">Jarvis</span>
+                    <h4>Lámpara Canopy</h4>
+                    <p>Iluminación LED</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Lampara Canopy Jarvis')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Lampara Canopy Jarvis')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="insumos" data-brand="kolor-kut">
+                    <img src="img/pasta-agua.jpg" loading="lazy" alt="Pasta Agua">
+                    <span class="brand-badge">Kolor Kut</span>
+                    <h4>Pasta Agua</h4>
+                    <p>Detectora (Rosa)</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Pasta Detectora de Agua')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Pasta Detectora de Agua')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bombas" data-brand="fill-rite">
+                    <img src="img/fr711va.jpg" loading="lazy" alt="FR711VA">
+                    <span class="brand-badge">Fill-Rite</span>
+                    <h4>FR711VA</h4>
+                    <p>Bomba Compacta</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Bomba FR711VA')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Bomba FR711VA')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="bombas" data-brand="fill-rite">
+                    <img src="img/fr1211h.jpg" loading="lazy" alt="FR1211H">
+                    <span class="brand-badge">Fill-Rite</span>
+                    <h4>FR1211H</h4>
+                    <p>Alto Rendimiento</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Bomba FR1211H')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Bomba FR1211H')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="bombas" data-brand="fill-rite">
+                    <img src="img/fr4211h.jpg" loading="lazy" alt="FR4211H">
+                    <span class="brand-badge">Fill-Rite</span>
+                    <h4>FR4211H</h4>
+                    <p>Bomba 12V DC</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Bomba FR4211H')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Bomba FR4211H')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="bombas" data-brand="fill-rite">
+                    <img src="img/medidor-807c.jpg" loading="lazy" alt="807C">
+                    <span class="brand-badge">Fill-Rite</span>
+                    <h4>Medidor 807C</h4>
+                    <p>Mecánico 3 Dígitos</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Medidor 807C')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Medidor 807C')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="bombas" data-brand="fill-rite">
+                    <img src="img/medidor-901c.jpg" loading="lazy" alt="901C">
+                    <span class="brand-badge">Fill-Rite</span>
+                    <h4>Medidor 901C</h4>
+                    <p>Mecánico 4 Dígitos</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Medidor 901C')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Medidor 901C')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="bombas" data-brand="gpi">
+                    <img src="img/pump-hp-100-ul.jpg" loading="lazy" alt="HP-100">
+                    <span class="brand-badge">GPI</span>
+                    <h4>HP-100 Dual Flo</h4>
+                    <p>Bomba Manual</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Bomba Manual HP-100')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Bomba Manual HP-100')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="bombas" data-brand="gpi">
+                    <img src="img/medidor-qm40.jpg" loading="lazy" alt="QM40">
+                    <span class="brand-badge">GPI</span>
+                    <h4>Medidor QM40</h4>
+                    <p>Alta Precisión</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Medidor QM40')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Medidor QM40')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="bombas" data-brand="red-jacket">
+                    <img src="img/motor-sumergible.jpg" loading="lazy" alt="Motor">
+                    <span class="brand-badge">Red Jacket</span>
+                    <h4>Motor Sumergible</h4>
+                    <p>Repuesto</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Motor para Sumergible')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Motor para Sumergible')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="accesorios" data-brand="opw">
+                    <img src="img/swivel.jpg" loading="lazy" alt="Swivel">
+                    <span class="brand-badge">Accesorio</span>
+                    <h4>Swivel (Giratoria)</h4>
+                    <p>Evita torceduras</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Swivel 3/4 o 1 pulgada')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Swivel 3/4 o 1 pulgada')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="accesorios" data-brand="opw">
+                    <img src="img/forro-amarillo.jpg" loading="lazy" alt="Forro">
+                    <span class="brand-badge">Genérico</span>
+                    <h4>Forro de Pistola</h4>
+                    <p>Varios Colores</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Forro para Pistola')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Forro para Pistola')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="filtracion" data-brand="filtros">
+                    <img src="img/filtro-trampa.jpg" loading="lazy" alt="Trampa">
+                    <span class="brand-badge">Filtros</span>
+                    <h4>Filtro Trampa</h4>
+                    <p>Vaso Transparente</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Filtro Trampa de Agua')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Filtro Trampa de Agua')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="filtracion" data-brand="filtros">
+                    <img src="img/filtro-elemento.jpg" loading="lazy" alt="Elemento">
+                    <span class="brand-badge">Filtros</span>
+                    <h4>Elemento Filtrante</h4>
+                    <p>Repuesto Papel</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Elemento de Filtro')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Elemento de Filtro')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="filtracion" data-brand="filtros">
+                    <img src="img/kit-filter-usk.jpg" loading="lazy" alt="Kit USK">
+                    <span class="brand-badge">Filtros</span>
+                    <h4>Kit Filtro USK</h4>
+                    <p>Completo</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Kit Filtro USK')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Kit Filtro USK')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="filtracion" data-brand="nupi">
+                    <img src="img/sumidero-tanque.jpg" loading="lazy" alt="Sumidero Tanque">
+                    <span class="brand-badge">NUPI / Otros</span>
+                    <h4>Sumidero Tanque</h4>
+                    <p>Contención HDPE</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Sumidero de Tanque')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Sumidero de Tanque')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="filtracion" data-brand="nupi">
+                    <img src="img/sumidero-dispensador.jpg" loading="lazy" alt="Sumidero Disp">
+                    <span class="brand-badge">NUPI / Otros</span>
+                    <h4>Sumidero Disp.</h4>
+                    <p>Bajo Dispensador</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Sumidero de Dispensador')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Sumidero de Dispensador')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="tuberia" data-brand="nupi">
+                    <img src="img/bota-entrada.jpg" loading="lazy" alt="Bota">
+                    <span class="brand-badge">NUPI</span>
+                    <h4>Bota de Entrada</h4>
+                    <p>Sellado de Tubería</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Bota de Entrada NUPI')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Bota de Entrada NUPI')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="tuberia" data-brand="nupi">
+                    <img src="img/adaptador-macho.jpg" loading="lazy" alt="Adaptador">
+                    <span class="brand-badge">NUPI</span>
+                    <h4>Adaptador Macho</h4>
+                    <p>Transición Metal</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Adaptador Macho NUPI')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Adaptador Macho NUPI')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="tuberia" data-brand="nupi">
+                    <img src="img/camisa.jpg" loading="lazy" alt="Camisa">
+                    <span class="brand-badge">NUPI</span>
+                    <h4>Camisa Unión</h4>
+                    <p>Electrofusion</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Camisa NUPI')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Camisa NUPI')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="tuberia" data-brand="nupi">
+                    <img src="img/riser.jpg" loading="lazy" alt="Riser">
+                    <span class="brand-badge">Accesorio</span>
+                    <h4>Riser (Tubo)</h4>
+                    <p>Conexión Tanque</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Riser para Tanque')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Riser para Tanque')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="tuberia" data-brand="emco">
+                    <img src="img/valvula-emergencia.jpg" loading="lazy" alt="Valvula Emergencia">
+                    <span class="brand-badge">Emco</span>
+                    <h4>Válvula Emergencia</h4>
+                    <p>Corte de Flujo</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Valvula de Emergencia')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Valvula de Emergencia')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="tuberia" data-brand="emco">
+                    <img src="img/valvula-venteo.jpg" loading="lazy" alt="Venteo">
+                    <span class="brand-badge">Emco</span>
+                    <h4>Válvula Venteo</h4>
+                    <p>Respiradero</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Valvula de Venteo')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Valvula de Venteo')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                    
+                <div class="product-card" data-category="insumos" data-brand="kolor-kut">
+                    <img src="img/pasta-combustible.jpg" loading="lazy" alt="Pasta Gasolina">
+                    <span class="brand-badge">Kolor Kut</span>
+                    <h4>Pasta Gasolina</h4>
+                    <p>Detectora (Amarilla)</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Pasta para Gasolina')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Pasta para Gasolina')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="insumos" data-brand="jarvis">
+                    <img src="img/lampara-hexagonal.jpg" loading="lazy" alt="Hexagonal">
+                    <span class="brand-badge">Jarvis / Otros</span>
+                    <h4>Lámpara Hexagonal</h4>
+                    <p>LED Industrial</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Lampara Hexagonal')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Lampara Hexagonal')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="insumos" data-brand="jarvis">
+                    <img src="img/lampara-perimetral.jpg" loading="lazy" alt="Perimetral">
+                    <span class="brand-badge">Jarvis</span>
+                    <h4>Lámpara Perimetral</h4>
+                    <p>Seguridad Externa</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Lampara Perimetral')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Lampara Perimetral')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="insumos" data-brand="jarvis">
+                    <img src="img/lampara-flexbeam.jpg" loading="lazy" alt="Flexbeam">
+                    <span class="brand-badge">Jarvis</span>
+                    <h4>Flexbeam</h4>
+                    <p>Drop Lens</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Lampara Flexbeam')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Lampara Flexbeam')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="insumos" data-brand="insumos">
+                    <img src="img/vara-medicion.jpg" loading="lazy" alt="Vara">
+                    <span class="brand-badge">Genérico</span>
+                    <h4>Vara de Medición</h4>
+                    <p>Calibrada</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Vara de Medicion')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Vara de Medicion')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="insumos" data-brand="insumos">
+                    <img src="img/basurero.jpg" loading="lazy" alt="Basurero">
+                    <span class="brand-badge">Genérico</span>
+                    <h4>Basurero / Plumillero</h4>
+                    <p>Para Isla</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Basurero de Isla')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Basurero de Isla')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div> 
+                <div class="product-card" data-category="dispensadores" data-brand="gilbarco">
+                    <img src="img/pulsador-gilbarco.jpg" loading="lazy" alt="Pulsador">
+                    <span class="brand-badge">Gilbarco</span>
+                    <h4>Pulsador</h4>
+                    <p>Electrónico</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Pulsador Gilbarco')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Pulsador Gilbarco')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="dispensadores" data-brand="gilbarco">
+                    <img src="img/preset-gilbarco.jpg" loading="lazy" alt="Preset">
+                    <span class="brand-badge">Gilbarco</span>
+                    <h4>Preset</h4>
+                    <p>Teclado Numérico</p>
+                    <div class="action-buttons">
+                        <a onclick="cotizarWha('Preset Gilbarco')" class="btn-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="cotizarEmail('Preset Gilbarco')" class="btn-icon email">✉️ Correo</a>
+                    </div>
+                </div>            
+
+            </div>
+
+            <div class="load-more-container">
+                <button id="btn-load-more" onclick="loadMore()">👇 Ver más productos</button>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="section brands-section">
         <div class="container">
-            <h2 class="section-title">Catálogo de Productos</h2>
-            <p style="text-align: center; margin-bottom: 40px; font-weight: 500;">Seleccione una categoría para ver todos los productos.</p>
-            
-            <div class="category-grid">
-                <div class="category-card" data-category="modal-bombas">
-                    <div class="icon-container">⛽</div>
-                    <h3>Bombas y Medidores</h3>
-                    <p>Bombas FR, GPI y medidores de flujo.</p>
-                    <button class="btn-ver">Ver Productos</button>
-                </div>
-                <div class="category-card" data-category="modal-dispensadores">
-                    <div class="icon-container">📟</div>
-                    <h3>Dispensadores y Electrónica</h3>
-                    <p>Equipos Wayne, teclados y pantallas.</p>
-                    <button class="btn-ver">Ver Productos</button>
-                </div>
-                <div class="category-card" data-category="modal-accesorios">
-                    <div class="icon-container">🔫</div>
-                    <h3>Pistolas y Mangueras</h3>
-                    <p>Boquereles, swivels y accesorios.</p>
-                    <button class="btn-ver">Ver Productos</button>
-                </div>
-                <div class="category-card" data-category="modal-filtracion">
-                    <div class="icon-container">💧</div>
-                    <h3>Filtración y Tanques</h3>
-                    <p>Filtros, sumideros y bombas sumergibles.</p>
-                    <button class="btn-ver">Ver Productos</button>
-                </div>
-                <div class="category-card" data-category="modal-tuberia">
-                    <div class="icon-container">🔧</div>
-                    <h3>Tubería NUPI y Válvulas</h3>
-                    <p>Sistema completo de tubería y conexiones.</p>
-                    <button class="btn-ver">Ver Productos</button>
-                </div>
-                <div class="category-card" data-category="modal-insumos">
-                    <div class="icon-container">💡</div>
-                    <h3>Insumos y Seguridad</h3>
-                    <p>Iluminación LED, medición y limpieza.</p>
-                    <button class="btn-ver">Ver Productos</button>
-                </div>
+            <h2 class="section-title">Nuestras Marcas</h2>
+            <div class="brands-grid">
+                <img src="img/fill.jpg" alt="Fill-Rite">
+                <img src="img/gpi.jpg" alt="GPI">
+                <img src="img/nupi.jpg" alt="NUPI">
+                <img src="img/red.jpg" alt="Red Jacket">
+                <img src="img/fluid.jpg" alt="Fluid House">
             </div>
         </div>
     </section>
@@ -116,142 +703,38 @@
         </div>
     </footer>
 
-    <div id="emailModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Solicitud de Cotización</h2>
-            <form action="https://formsubmit.co/servicioalcliente@multiproyectosgt.com" method="POST">
-                <input type="hidden" name="_subject" value="Nueva Cotización Web">
-                <input type="hidden" name="_captcha" value="false">
-                
-                <div class="form-group">
-                    <label>Nombre *</label>
-                    <input type="text" name="Nombre" required>
-                </div>
-                <div class="form-group">
-                    <label>Apellido *</label>
-                    <input type="text" name="Apellido" required>
-                </div>
-                <div class="form-group">
-                    <label>Empresa</label>
-                    <input type="text" name="Empresa">
-                </div>
-                <div class="form-group">
-                    <label>Su Correo *</label>
-                    <input type="email" name="email" required>
-                </div>
-                <button type="submit" class="btn btn-submit">Enviar Solicitud</button>
-            </form>
-        </div>
-    </div>
+<div id="emailModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Solicitud de Cotización</h2>
+        
+        <p id="quoting-product-name" style="color: var(--primary-solid); font-weight: bold; margin-bottom: 15px; background: #e6f0ff; padding: 10px; border-radius: 5px; display:none;"></p>
 
-    <div id="modal-bombas" class="catalog-modal">
-        <div class="catalog-content">
-            <span class="close-catalog">&times;</span>
-            <h2>Bombas y Medidores</h2>
-            <div class="products-grid">
-                <div class="product-item"><img src="img/fr150.jpg"><h4>FR150</h4><p>Manual</p></div>
-                <div class="product-item"><img src="img/fr112c.jpg"><h4>FR112C</h4><p>Eléctrica</p></div>
-                <div class="product-item"><img src="img/fr610h.jpg"><h4>FR610H</h4><p>Alto Flujo</p></div>
-                <div class="product-item"><img src="img/fr711va.jpg"><h4>FR711VA</h4><p>Standard</p></div>
-                <div class="product-item"><img src="img/fr1211h.jpg"><h4>FR1211H</h4><p>12V DC</p></div>
-                <div class="product-item"><img src="img/fr4211h.jpg"><h4>FR4211H</h4><p>Alto rendimiento</p></div>
-                <div class="product-item"><img src="img/nx25-120nbaa.jpg"><h4>NX25</h4><p>Transferencia</p></div>
-                <div class="product-item"><img src="img/pump-g20.jpg"><h4>PUMP G20</h4><p>GPI</p></div>
-                <div class="product-item"><img src="img/pump-g20-012po.jpg"><h4>G20-012PO</h4><p>Industrial</p></div>
-                <div class="product-item"><img src="img/pump-hp-100-ul.jpg"><h4>HP-100-UL</h4><p>Alta capacidad</p></div>
-                <div class="product-item"><img src="img/medidor-807c.jpg"><h4>807C</h4><p>Mecánico</p></div>
-                <div class="product-item"><img src="img/medidor-900cd.jpg"><h4>900CD</h4><p>Digital</p></div>
-                <div class="product-item"><img src="img/medidor-901c.jpg"><h4>901C</h4><p>Mecánico</p></div>
-                <div class="product-item"><img src="img/medidor-m30.jpg"><h4>M30</h4><p>GPI Azul</p></div>
-                <div class="product-item"><img src="img/medidor-qm40.jpg"><h4>QM40</h4><p>GPI PRO</p></div>
+        <form action="https://formsubmit.co/servicioalcliente@multiproyectosgt.com" method="POST">
+            <input type="hidden" name="_subject" id="email-subject" value="Nueva Cotización Web">
+            <input type="hidden" name="Producto_Interes" id="form-product-name" value="Consulta General">
+            <input type="hidden" name="_captcha" value="false">
+            
+            <div class="form-group">
+                <label>Nombre *</label>
+                <input type="text" name="Nombre" required placeholder="Su nombre">
             </div>
-        </div>
-    </div>
-
-    <div id="modal-dispensadores" class="catalog-modal">
-        <div class="catalog-content">
-            <span class="close-catalog">&times;</span>
-            <h2>Dispensadores y Electrónica</h2>
-            <div class="products-grid">
-                <div class="product-item"><img src="img/wayne-helix.jpg"><h4>WAYNE HELIX</h4><p>Dispensador</p></div>
-                <div class="product-item"><img src="img/wayne-select.jpg"><h4>WAYNE SELECT</h4><p>Dispensador</p></div>
-                <div class="product-item"><img src="img/keypad-encor-500.jpg"><h4>KEYPAD ENCOR</h4><p>Teclado</p></div>
-                <div class="product-item"><img src="img/preset-gilbarco.jpg"><h4>PRESET</h4><p>Gilbarco</p></div>
-                <div class="product-item"><img src="img/display-lcd.jpg"><h4>DISPLAY LCD</h4><p>Pantalla</p></div>
-                <div class="product-item"><img src="img/pulsador-gilbarco.jpg"><h4>PULSADOR</h4><p>Gilbarco</p></div>
+            <div class="form-group">
+                <label>Teléfono *</label>
+                <input type="tel" name="Telefono" required placeholder="Para llamarle">
             </div>
-        </div>
-    </div>
-
-    <div id="modal-accesorios" class="catalog-modal">
-        <div class="catalog-content">
-            <span class="close-catalog">&times;</span>
-            <h2>Pistolas y Mangueras</h2>
-            <div class="products-grid">
-                <div class="product-item"><img src="img/pistolas.jpg"><h4>PISTOLAS</h4><p>3/4" y 1"</p></div>
-                <div class="product-item"><img src="img/forro-amarillo.jpg"><h4>FORRO</h4><p>Protector</p></div>
-                <div class="product-item"><img src="img/breakaway.jpg"><h4>BREAKAWAY</h4><p>Seguridad</p></div>
-                <div class="product-item"><img src="img/swivel.jpg"><h4>SWIVEL</h4><p>Giratoria</p></div>
-                <div class="product-item"><img src="img/manguera-fluid-house.jpg"><h4>MANGUERA</h4><p>Fluid House</p></div>
+            <div class="form-group">
+                <label>Correo *</label>
+                <input type="email" name="email" required placeholder="ejemplo@correo.com">
             </div>
-        </div>
-    </div>
-
-    <div id="modal-filtracion" class="catalog-modal">
-        <div class="catalog-content">
-            <span class="close-catalog">&times;</span>
-            <h2>Filtración y Tanques</h2>
-            <div class="products-grid">
-                <div class="product-item"><img src="img/bomba-sumergible.jpg"><h4>RED JACKET</h4><p>Bomba</p></div>
-                <div class="product-item"><img src="img/motor-sumergible.jpg"><h4>MOTOR</h4><p>Repuesto</p></div>
-                <div class="product-item"><img src="img/filtro-trampa.jpg"><h4>TRAMPA AGUA</h4><p>Visor claro</p></div>
-                <div class="product-item"><img src="img/filtro-elemento.jpg"><h4>ELEMENTO</h4><p>Repuesto</p></div>
-                <div class="product-item"><img src="img/filtro-fillrite.jpg"><h4>FILL-RITE</h4><p>Partículas</p></div>
-                <div class="product-item"><img src="img/filtro-petroclear.jpg"><h4>PETROCLEAR</h4><p>Industrial</p></div>
-                <div class="product-item"><img src="img/kit-filter-usk.jpg"><h4>KIT FILTRO</h4><p>USK</p></div>
-                <div class="product-item"><img src="img/o-ring-gilbarco.jpg"><h4>O-RINGS</h4><p>Junta Gilbarco</p></div>
-                <div class="product-item"><img src="img/sumidero-tanque.jpg"><h4>SUMIDERO</h4><p>Tanque</p></div>
-                <div class="product-item"><img src="img/sumidero-dispensador.jpg"><h4>SUMIDERO</h4><p>Dispensador</p></div>
-                <div class="product-item"><img src="img/contenedor-derrames.jpg"><h4>CONTENEDOR</h4><p>Derrames 5G</p></div>
-                <div class="product-item"><img src="img/bota-entrada.jpg"><h4>BOTA</h4><p>Entrada</p></div>
+            <div class="form-group">
+                <label>Mensaje / Detalles</label>
+                <textarea name="Mensaje" rows="3" style="width:100%; padding:10px; border:2px solid #eee; border-radius:8px;"></textarea>
             </div>
-        </div>
+            <button type="submit" class="btn btn-submit">Enviar Solicitud</button>
+        </form>
     </div>
-
-    <div id="modal-tuberia" class="catalog-modal">
-        <div class="catalog-content">
-            <span class="close-catalog">&times;</span>
-            <h2>Tubería NUPI y Válvulas</h2>
-            <div class="products-grid">
-                <div class="product-item"><img src="img/tuberia-nupi.jpg"><h4>TUBERIA</h4><p>NUPI</p></div>
-                <div class="product-item"><img src="img/adaptador-macho.jpg"><h4>ADAPTADOR</h4><p>Macho</p></div>
-                <div class="product-item"><img src="img/camisa.jpg"><h4>CAMISA</h4><p>Unión</p></div>
-                <div class="product-item"><img src="img/codo.jpg"><h4>CODO</h4><p>90 Grados</p></div>
-                <div class="product-item"><img src="img/tee.jpg"><h4>TEE</h4><p>Conexión T</p></div>
-                <div class="product-item"><img src="img/riser.jpg"><h4>RISER</h4><p>Tubo</p></div>
-                <div class="product-item"><img src="img/valvula-emergencia.jpg"><h4>VALVULA</h4><p>Emergencia</p></div>
-                <div class="product-item"><img src="img/valvula-venteo.jpg"><h4>VENTEO</h4><p>Válvula</p></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-insumos" class="catalog-modal">
-        <div class="catalog-content">
-            <span class="close-catalog">&times;</span>
-            <h2>Insumos y Seguridad</h2>
-            <div class="products-grid">
-                <div class="product-item"><img src="img/pasta-combustible.jpg"><h4>PASTA</h4><p>Combustible</p></div>
-                <div class="product-item"><img src="img/pasta-agua.jpg"><h4>PASTA</h4><p>Agua</p></div>
-                <div class="product-item"><img src="img/vara-medicion.jpg"><h4>VARA</h4><p>Medición</p></div>
-                <div class="product-item"><img src="img/basurero.jpg"><h4>BASURERO</h4><p>Plumillero</p></div>
-                <div class="product-item"><img src="img/lampara-canopy.jpg"><h4>CANOPY</h4><p>Jarvis</p></div>
-                <div class="product-item"><img src="img/lampara-flexbeam.jpg"><h4>FLEXBEAM</h4><p>Drop Lens</p></div>
-                <div class="product-item"><img src="img/lampara-hexagonal.jpg"><h4>HEXAGONAL</h4><p>LED</p></div>
-                <div class="product-item"><img src="img/lampara-perimetral.jpg"><h4>PERIMETRAL</h4><p>LED</p></div>
-            </div>
-        </div>
-    </div>
+</div>
 
     <script src="script.js"></script>
 </body>
