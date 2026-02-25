@@ -1,4 +1,4 @@
-# ⛽ Surtidora de Gasolineras - Landing Page
+# Surtidora de Gasolineras - Landing Page
 
 ![Estado del Proyecto](https://img.shields.io/badge/Estado-Prototipo_Funcional-green)
 ![Diseño](https://img.shields.io/badge/Diseño-Responsive-blue)
@@ -9,10 +9,10 @@ El objetivo principal de este proyecto es tener una **alta visibilidad web** y c
 
 ## 🔗 Ver Demo en Vivo
 Puedes ver la página funcionando aquí:  
-👉 **[HAZ CLIC AQUÍ PARA VER LA PÁGINA](https://danielpazortega1.github.io/proyecto-gasolinera)**
-*(Reemplaza este link con el que te dio GitHub Pages)*
+ **[HAZ CLIC AQUÍ PARA VER LA PÁGINA](https://danielpazortega1.github.io/proyecto-gasolinera)**
 
-## 🛠️ Tecnologías Utilizadas
+
+##  Tecnologías Utilizadas
 Este proyecto fue construido utilizando prácticas de desarrollo web moderno y semántico:
 
 * **HTML5 Semántico:** Para una estructura clara y optimizada para SEO (Google).
@@ -23,13 +23,13 @@ Este proyecto fue construido utilizando prácticas de desarrollo web moderno y s
 * **JavaScript (Vanilla):** Para la interactividad del menú hamburguesa en móviles sin depender de librerías pesadas.
 * **Google Fonts:** Tipografía 'Roboto' para una lectura limpia y corporativa.
 
-## ✨ Características Principales
+##  Características Principales
 1.  **Diseño Adaptable (Responsive):** Se ajusta perfectamente a celulares, tablets y computadoras de escritorio.
 2.  **Navegación Móvil:** Menú tipo "Hamburguesa" animado con deslizamiento lateral.
 3.  **Call to Action (CTA) Directo:** Botones de "Cotizar" configurados con la API de WhatsApp para abrir chat directo con mensaje predefinido.
 4.  **Optimización SEO:** Estructura preparada para posicionarse en búsquedas locales.
 
-## 📂 Estructura del Proyecto
+##  Estructura del Proyecto
 ```text
 proyecto-gasolinera/
 ├── index.html      # Estructura principal y contenido
